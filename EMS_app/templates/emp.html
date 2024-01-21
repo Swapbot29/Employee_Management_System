@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employees</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        h1{
+           text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Employees</h1>
+    <h4><a href="{% url 'add_emp' %}" class="back-link">Add New Employee</a></h4>
+    <h5><a href="{% url 'home' %}" >Home</a></h5>
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Designation</th>
+                <!-- Add more headers based on your Employee model fields -->
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.First_Name }}</td>
+                    <td>{{ employee.Email }}</td>
+                    <td>{{ employee.Address }}</td>
+                    <td>{{ employee.Designation}}</td>
+                    <td>{{ employee.Department }}</td>
+                    <td><a href="{% url 'emp_update' employee.id %}" >Update</a>
+                        <a href="{% url 'emp_delete' employee.id %}" >Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
