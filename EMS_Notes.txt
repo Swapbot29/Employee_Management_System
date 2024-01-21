@@ -1,0 +1,26 @@
+So starting the project with creating models
+class-Department - with attributes ( D_Name,Floor ).
+class-Employee - with attributes ( First_Name, Last_Name, Email, Address, Designation, Reporting_Manager, Department ).
+class EmployeeSalary - with attributes ( Employee, salary, start_date and end_date ).
+after creating models we have to make migrations and migrate to commit the changes to datebase and create table in database.
+
+It will take half an hour to setting up models and ensuring proper relationship.
+
+Then create a superuser to add temporary data into tables.
+tThen setup the admin page by registering the models into admin site.
+
+It will take half an hour to registering and implementing some classes for list display and filters.
+
+Then create views to display all list data of the employee table and all the CRUD operations for the table and same for department and employee salary details table.
+
+we will go one table at a time to ensure the data is rendering on template or not then create forms.py and create forms models for updating and creating new data.
+
+Views logic will take 3-4 hours to add logic for retrieving data and CRUD operations logic and calculating costs.
+
+then create templates for each operation and add the template names to URLs pattern to link with views.
+
+for all work, it will take 8-10 hours with testing the program.
+
+
+
+

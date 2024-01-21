@@ -4,7 +4,6 @@ from .models import Department, Employee, EmployeeSalary
 from .forms import EmpForm,DeptForm,ESalaryForm
 from django.urls import reverse_lazy
 from django.db.models import Sum
-from django.utils import timezone
 
 # Create your views here.
 # Views for Employee Details
@@ -118,7 +117,6 @@ def Salary_report(request):
         start_date = request.POST.get('start_date')
         end_date = request.POST.get('end_date')
 
-        # Retrieve department-wise cost in salaries
         department_costs = Employee.objects.filter(
             employeesalary__start_date__lte=end_date,
             employeesalary__end_date__gte=start_date
